@@ -7,10 +7,12 @@ import 'package:intl/intl.dart';
 
 class GopayCard extends StatelessWidget {
   final num gopaCharge;
+  final bool disabled;
 
   const GopayCard({
     super.key,
     required this.gopaCharge,
+    this.disabled = false,
   });
 
   @override
@@ -21,7 +23,8 @@ class GopayCard extends StatelessWidget {
         vertical: 8,
       ),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color:
+            (disabled) ? AppColors.lightGray.withOpacity(.8) : AppColors.white,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
